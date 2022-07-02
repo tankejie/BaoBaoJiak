@@ -3,12 +3,12 @@ from flask import Flask, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-
+import tensorflow as tf 
+from tensorflow import keras
 from keras.models import load_model 
 from keras.backend import set_session
 from skimage.transform import resize 
 import matplotlib.pyplot as plt 
-import tensorflow as tf 
 import numpy as np 
 
 print("Loading model") 
@@ -34,7 +34,8 @@ def prediction(filename):
     #Step 1
     my_image = plt.imread(os.path.join('uploads', filename))
     #Step 2
-    my_image_re = resize(my_image, (32,32,3))
+#     my_image_re = resize(my_image, (32,32,3))
+    my_image_re = tf.keras.applications.vgg16.preprocess_input(my_image)
     
     #Step 3
     #with graph.as_default():
@@ -44,8 +45,7 @@ def prediction(filename):
     probabilities = model.predict(np.array( [my_image_re,] ))[0,:]
     print(probabilities)
     #Step 4
-    number_to_class = ['airplane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 
-'truck']
+    number_to_class = ['D13', 'D24', 'D197']
     index = np.argsort(probabilities)
     predictions = {
       "class1":number_to_class[index[9]],
