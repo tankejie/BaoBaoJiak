@@ -46,9 +46,9 @@ def prediction(filename):
     #with graph.as_default():
         #set_session(sess)
         #Add
-    cnn_model.run_eagerly=True  
-    probabilities = cnn_model.predict(np.array([my_image_re,]), verbose=0)[0,:]
-#     print(probabilities)
+    model.run_eagerly=True  
+    probabilities = model.predict(np.array([my_image_re,]), verbose=0)[0,:]
+    print(probabilities)
     #Step 4
     number_to_class = ['D13','D24','D197']
     index = np.argsort(probabilities)
