@@ -10,7 +10,7 @@ from keras.backend import set_session
 from skimage.transform import resize 
 import matplotlib.pyplot as plt 
 import numpy as np
-from PIL import ImageOps
+from PIL import ImageOps, Image
 
 print("Loading model") 
 #global sess
@@ -33,7 +33,8 @@ def main_page():
 @app.route('/prediction/<filename>') 
 def prediction(filename):
     #Step 1
-    img = plt.imread(os.path.join('uploads', filename))
+#     img = plt.imread(os.path.join('uploads', filename))
+    img = Image.open(os.path.join('uploads', filename))
     #Step 2
     my_image = ImageOps.fit(img, (128,128))
     my_image_re = tf.keras.applications.vgg16.preprocess_input(np.array(my_image))
