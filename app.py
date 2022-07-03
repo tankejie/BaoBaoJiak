@@ -34,9 +34,8 @@ def prediction(filename):
     #Step 1
     my_image = plt.imread(os.path.join('uploads', filename))
     #Step 2
-#     my_image_re = resize(my_image, (32,32,3))
+    # my_image_re = resize(my_image, (32,32,3))
     my_image_re = tf.keras.applications.vgg16.preprocess_input(my_image)
-    
     #Step 3
     #with graph.as_default():
       #set_session(sess)
@@ -45,18 +44,47 @@ def prediction(filename):
     probabilities = model.predict(np.array( [my_image_re,] ))[0,:]
     print(probabilities)
     #Step 4
-    number_to_class = ['D13', 'D24', 'D197']
+    number_to_class = ['D13','D24','D197']
     index = np.argsort(probabilities)
     predictions = {
-      "class1":number_to_class[index[9]],
-      "class2":number_to_class[index[8]],
-      "class3":number_to_class[index[7]],
-      "prob1":probabilities[index[9]],
-      "prob2":probabilities[index[8]],
-      "prob3":probabilities[index[7]],
+      "class1":number_to_class[index[2]],
+      "class2":number_to_class[index[1]],
+      "class3":number_to_class[index[0]],
+      "prob1":probabilities[index[2]],
+      "prob2":probabilities[index[1]],
+      "prob3":probabilities[index[0]],
      }
     #Step 5
     return render_template('predict.html', predictions=predictions)
+
+# @app.route('/prediction/<filename>') 
+# def prediction(filename):
+#     #Step 1
+#     my_image = plt.imread(os.path.join('uploads', filename))
+#     #Step 2
+# #     my_image_re = resize(my_image, (32,32,3))
+#     my_image_re = tf.keras.applications.vgg16.preprocess_input(my_image)
+    
+#     #Step 3
+#     #with graph.as_default():
+#       #set_session(sess)
+#       #Add
+#     model.run_eagerly=True  
+#     probabilities = model.predict(np.array( [my_image_re,] ))[0,:]
+#     print(probabilities)
+#     #Step 4
+#     number_to_class = ['D13', 'D24', 'D197']
+#     index = np.argsort(probabilities)
+#     predictions = {
+#       "class1":number_to_class[index[9]],
+#       "class2":number_to_class[index[8]],
+#       "class3":number_to_class[index[7]],
+#       "prob1":probabilities[index[9]],
+#       "prob2":probabilities[index[8]],
+#       "prob3":probabilities[index[7]],
+#      }
+#     #Step 5
+#     return render_template('predict.html', predictions=predictions)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
