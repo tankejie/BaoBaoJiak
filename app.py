@@ -38,9 +38,9 @@ def prediction(filename):
     #Step 2
     my_image = ImageOps.fit(img, (128,128))
     my_image_re = tf.keras.applications.vgg16.preprocess_input(np.array(my_image))
-    f, axarr = plt.subplots(1,2)
-    axarr[0].imshow(my_image)
-    axarr[1].imshow(my_image_re)
+#     f, axarr = plt.subplots(1,2)
+#     axarr[0].imshow(my_image)
+#     axarr[1].imshow(my_image_re)
 
     #Step 3
     #with graph.as_default():
@@ -48,7 +48,7 @@ def prediction(filename):
         #Add
     cnn_model.run_eagerly=True  
     probabilities = cnn_model.predict(np.array([my_image_re,]), verbose=0)[0,:]
-    print(probabilities)
+#     print(probabilities)
     #Step 4
     number_to_class = ['D13','D24','D197']
     index = np.argsort(probabilities)
