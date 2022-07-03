@@ -33,7 +33,7 @@ def main_page():
 @app.route('/prediction/<filename>') 
 def prediction(filename):
     #Step 1
-    my_image = plt.imread(os.path.join('uploads', filename))
+    img = plt.imread(os.path.join('uploads', filename))
     #Step 2
     my_image = ImageOps.fit(img, (128,128))
     my_image_re = tf.keras.applications.vgg16.preprocess_input(np.array(my_image))
