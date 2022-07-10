@@ -43,9 +43,13 @@
                         a
                         photo of them! We help you to identify them!
                     </p>
+                    <!--Display: Image Upload-->
+                    <button class="btn btn-primary btn-lg">
+                        <label for="input-image">Upload</label>
+                    </button>
                     <form method="post" enctype="multipart/form-data" class="services-link">
                         <div class="drop-zone">
-                            <input type="file" name="file" class="drop-zone__input" required="required" accept="image/*"
+                            <input type="file" id="iput-image" name="file" class="drop-zone__input" required="required" accept="image/*" hidden
                                 onchange="if (this.value != 0) { this.form.submit(); this.form.reset(); }">
                         </div>
                     </form>
