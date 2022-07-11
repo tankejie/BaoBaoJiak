@@ -42,11 +42,15 @@
                         <div class="col-md-auto"
                             style="text-align: left; color: black !important; justify-content: center; display: grid;">
                             <!-- Display Image -->
-                            <img id="tableBanner" class="img-thumbnail" src="">
+                            <img id="imgPreview" class="img-thumbnail" src="">
                             <script type="text/javascript">
-                                const dataImage = localStorage.getItem("imgData");
-                                const bannerImg = document.getElementById("tableBanner");
-                                bannerImg.src = "data:image/png;base64," + dataImage;
+                                document.addEventListener("DOMContentLoaded", () => {
+                                    const recentImageDataURL = localStorage.getItem("recent-image");
+                                    
+                                    if (recentImageDataURL) {
+                                        document.querySelector("#imgPreview").setAttribute("scr", recentImageDataURL);
+                                    }
+                                });
                             </script>
                         </div>
                         <div class="col-9" style="color: black !important; text-align: left;">
