@@ -1,6 +1,6 @@
 var inputImage, imgData
 
-inputImage = document.getElementById('input-image');
+inputImage = document.getElementById('inputimg');
 imgData = getBase64Image(inputImage);
 localStorage.setItem("imgData", imgData);
     
