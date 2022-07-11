@@ -55,6 +55,12 @@
                     </form>
                 </div>
                 <img id="inputimg" class="img-fluid w-50 d-none d-sm-block" src="https://github.com/tankejie/BaoBaoJiak/blob/main/templates/img/showcase.png?raw=true" alt="">
+                <script type="text/javascript">
+                    var inputImage, imgData
+                    inputImage = document.getElementById('inputimg');
+                    imgData = getBase64Image(inputImage);
+                    localStorage.setItem("imgData", imgData);
+                </script>
             </div>
         </div>
     </section>
