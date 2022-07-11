@@ -50,12 +50,12 @@
                     <form method="post" enctype="multipart/form-data" class="services-link">
                         <div class="drop-zone">
                             <input id="input-image" type="file" name="file" class="drop-zone__input" required="required" accept="image/*" hidden
-                                onchange="if (this.value != 0) { this.form.submit(); loadFile(event); this.form.reset(); }">
+                                onchange="if (this.value != 0) { loadFile(event); this.form.submit(); this.form.reset(); }">
                         </div>
                     </form>
                 </div>
                 <img class="img-fluid w-50 d-none d-sm-block" src="https://github.com/tankejie/BaoBaoJiak/blob/main/templates/img/showcase.png?raw=true" alt="">
-                <img id="inputimg" hidden src="" alt="">
+                <img id="inputimg" src="" alt="">
             </div>
         </div>
     </section>
