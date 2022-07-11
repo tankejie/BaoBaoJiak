@@ -1,3 +1,4 @@
-var dataImage = localStorage.getItem('imgData');
-var outputImg = document.getElementById('output-image');
-outputImg.src = "data:image/png;base64," + dataImage;
+var loadFile = function (event) {
+    var image = document.getElementById('output');
+    image.src = URL.createObjectURL(event.target.files[0]);
+};
