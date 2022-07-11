@@ -43,6 +43,9 @@
                             style="text-align: left; color: black !important; justify-content: center; display: grid;">
                             <!-- Display Image -->
                             <img id="output-image" class="img-thumbnail" src="">
+                            <script>var dataImage = localStorage.getItem('imgData');
+                            bannerImg = document.getElementById('output-image');
+                                bannerImg.src = "data:image/png;base64," + dataImage;</script>
                         </div>
                         <div class="col-9" style="color: black !important; text-align: left;">
                             <h2 class="section-heading resultpage text-uppercase" style="color: black !important;">{{
@@ -102,6 +105,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="displayimagescript.js"></script>
 </body>
 </html>
