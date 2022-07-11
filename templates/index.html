@@ -50,11 +50,25 @@
                     <form method="post" enctype="multipart/form-data" class="services-link">
                         <div class="drop-zone">
                             <input id="input-image" type="file" name="file" class="drop-zone__input" required="required" accept="image/*" hidden
-                                onchange="if (this.value != 0) { this.form.submit(); this.form.reset(); }">
+                                onchange="if (this.value != 0) { 
+                                          document.querySelector("#input-image").addEventListener("change", function () {
+                                                                                                          const reader = new FileReader();
+                                                                                                          
+                                                                                                          reader.addEventListener("load", () => {
+                                                                                                                                        localStorage.setItem("recent-image", reader.result);
+                                                                                                                                        });
+                                                                                                                                        
+                                                                                                                                        reader.readAsDataURL(this.files[0]);
+                                                                                                                                        });
+                                                                                                                                        
+                                                                                                          this.form.submit();
+                                                                                                          
+                                                                                                          this.form.reset();
+                                                                                                          }">
                         </div>
                     </form>
                 </div>
-                <img id="bannerImg" class="img-fluid w-50 d-none d-sm-block" src="https://github.com/tankejie/BaoBaoJiak/blob/main/templates/img/showcase.png?raw=true" alt="">
+                <img class="img-fluid w-50 d-none d-sm-block" src="https://github.com/tankejie/BaoBaoJiak/blob/main/templates/img/showcase.png?raw=true" alt="">
             </div>
         </div>
     </section>
@@ -81,7 +95,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="displayimagescript.js"></script>
-    <script type="text/javascript" src="saveimagelocallyscript.js"></script>
 </body>
 </html>
