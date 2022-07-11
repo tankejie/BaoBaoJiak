@@ -50,21 +50,17 @@
                     <form method="post" enctype="multipart/form-data" class="services-link">
                         <div class="drop-zone">
                             <input id="input-image" type="file" name="file" class="drop-zone__input" required="required" accept="image/*" hidden
-                                onchange="if (this.value != 0) { 
-                                          document.querySelector("#input-image").addEventListener("change", function () {
-                                                                                                          const reader = new FileReader();
-                                                                                                          
-                                                                                                          reader.addEventListener("load", () => {
-                                                                                                                                        localStorage.setItem("recent-image", reader.result);
-                                                                                                                                        });
-                                                                                                                                        
-                                                                                                                                        reader.readAsDataURL(this.files[0]);
-                                                                                                                                        });
-                                                                                                                                        
-                                                                                                          this.form.submit();
-                                                                                                          
-                                                                                                          this.form.reset();
-                                                                                                          }">
+                                onchange="if (this.value != 0) { this.form.submit(); this.form.reset(); }">              
+                            <script> document.querySelector("#input-image").addEventListener("change", function () { 
+                                    const reader = new FileReader();
+                                    
+                                    reader.addEventListener("load", () => {
+                                        localStorage.setItem("recent-image", reader.result);
+                                    });
+                                    
+                                    reader.readAsDataURL(this.files[0]);
+                                });
+                            </script>                                                                         
                         </div>
                     </form>
                 </div>
