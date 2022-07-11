@@ -50,16 +50,18 @@ def prediction(filename):
     model.run_eagerly=True  
     probabilities = model.predict(np.array([my_image_re,]), verbose=0)[0,:]
     print(probabilities)
+    # converting probabilities to percentages
+    percentages = [round(p*100,2) for p in probabilities]
     #Step 4
     number_to_class = ['D13','D24','D197']
-    index = np.argsort(probabilities)
+    index = np.argsort(percentages)
     predictions = {
         "class1":number_to_class[index[2]],
         "class2":number_to_class[index[1]],
         "class3":number_to_class[index[0]],
-        "prob1":probabilities[index[2]],
-        "prob2":probabilities[index[1]],
-        "prob3":probabilities[index[0]],
+        "prob1":percentages[index[2]],
+        "prob2":percentages[index[1]],
+        "prob3":percentages[index[0]],
         }
     #Step 5
     return render_template('predict.html', predictions=predictions)    
