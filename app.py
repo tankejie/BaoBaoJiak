@@ -35,6 +35,7 @@ def prediction(filename):
     #Step 1
 #     img = plt.imread(os.path.join('uploads', filename))
     img = Image.open(os.path.join('uploads', filename))
+    img.save("")
     #Step 2
     my_image = ImageOps.fit(img, (128,128))
     my_image_re = tf.keras.applications.vgg16.preprocess_input(np.array(my_image))
