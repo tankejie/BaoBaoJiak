@@ -50,7 +50,7 @@
                             <h3 class="section-subheading resultpage text-muted"
                                 style="color: black !important; font-style: normal !important;">We think the plant may
                                 be
-                                {{ predictions.class1 }} with {{ predictions.prob1*100 }}% confidence.</h3>
+                                {{ predictions.class1 }} with {{ (predictions.prob1*100).toFixed(2) }}% confidence.</h3>
                             <form method="post" enctype="multipart/form-data" class="services-link">
                                 <!--Display: Image Upload-->
                                 <button class="btn btn-primary btn-lg">
