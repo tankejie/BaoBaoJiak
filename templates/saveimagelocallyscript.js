@@ -1,9 +1,3 @@
-var inputImage, imgData
-
-inputImage = document.getElementById('inputimg');
-imgData = getBase64Image(inputImage);
-localStorage.setItem("imgData", imgData);
-    
 function getBase64Image(img) {
     var canvas = document.createElement("canvas");
     canvas.width = img.width;
