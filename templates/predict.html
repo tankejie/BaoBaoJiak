@@ -45,9 +45,7 @@
                             <img id="imgPreview" src="">
                             <script>
                                 const recentImageDataURL = localStorage.getItem("recent-image");
-                                if (recentImageDataURL) {
-                                    document.querySelector("#imgPreview").setAttribute("scr", recentImageDataURL);
-                                }
+                                document.querySelector("#imgPreview").setAttribute("scr", recentImageDataURL);
                             </script>
                         </div>
                         <div class="col-9" style="color: black !important; text-align: left;">
