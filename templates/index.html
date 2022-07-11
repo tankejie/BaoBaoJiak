@@ -50,7 +50,7 @@
                     <form method="post" enctype="multipart/form-data" class="services-link">
                         <div class="drop-zone">
                             <input id="input-image" type="file" name="file" class="drop-zone__input" required="required" accept="image/*" hidden
-                                onchange="if (this.value != 0) { this.form.submit(); }">              
+                                onchange="if (this.value != 0) {}">              
                             <script> document.querySelector("#input-image").addEventListener("change", function () { 
                                     const reader = new FileReader();
                                     
