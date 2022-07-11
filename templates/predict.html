@@ -50,15 +50,15 @@
                             <h3 class="section-subheading resultpage text-muted"
                                 style="color: black !important; font-style: normal !important;">We think the plant may
                                 be
-                                {{ predictions.class1 }} with {{ predictions.prob1 }}% confidence.</h3>
-                            <form action="/predict" method="post" enctype="multipart/form-data" class="services-link">
-                                <label for="file-input">
-                                    <img class="hovImage" src="/static/images/btnIdentify001.png"
-                                        style="width: 250px; cursor: pointer;">
-                                </label>
-                                <input type="file" name="file" id="file-input" required="required" accept="image/*"
-                                    onchange="if (this.value != 0) { this.form.submit(); this.form.reset(); }"
-                                    style="width:100%; display: none;">
+                                {{ predictions.class1 }} with {{ predictions.prob1*100 }}% confidence.</h3>
+                            <form method="post" enctype="multipart/form-data" class="services-link">
+                                <!--Display: Image Upload-->
+                                <button class="btn btn-primary btn-lg">
+                                    <label for="input-image">Upload</label>
+                                </button>
+                                <div class="drop-zone">
+                                    <input type="file" id="input-image" name="file" class="drop-zone__input" required="required" accept="image/*" hidden onchange="if (this.value != 0) { this.form.submit(); loadFile(event); }">
+                                </div>
                             </form>
                             <!--<span id="demo" style="width:100%; display: flex;"</span>-->
                         </div>
@@ -70,7 +70,7 @@
                         <div class="row">
                             <!--Portfolio item 1-->
                             <div class="services-caption-heading resultpage" style="color: black;">
-                                <h2>About {{ predictions.class1 }}</h2>
+                                <h2>About {{ predictions.class1 }} Durian</h2>
                             </div><br>
                             <div class="services-caption-subheading resultpage text-muted"
                                 style="font-style: normal; text-align: justify;"><b>Wikipedia:</b> Basil (, also US: ;
