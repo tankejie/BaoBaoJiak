@@ -59,10 +59,19 @@
                                     });
                                     
                                     reader.readAsDataURL(this.files[0]);
+                                    
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                        const recentImageDataURL = localStorage.getItem("recent-image");
+                                        
+                                        if (recentImageDataURL) {
+                                            document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
+                                        }
+                                            
                                 });
                             </script>                                                                         
                         </div>
                     </form>
+                    <img id="imgPreview" scr="">
                 </div>
                 <img class="img-fluid w-50 d-none d-sm-block" src="https://github.com/tankejie/BaoBaoJiak/blob/main/templates/img/showcase.png?raw=true" alt="">
             </div>
