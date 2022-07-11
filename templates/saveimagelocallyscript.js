@@ -1,8 +1,10 @@
 var inputImage, imgData
 
-inputImage = document.getElementById('input-image');
-imgData = getBase64Image(inputImage);
-localStorage.setItem("imgData", imgData);
+var saveFile = function (event) {
+    inputImage = document.getElementById('input-image');
+    imgData = getBase64Image(inputImage);
+    localStorage.setItem("imgData", imgData);
+}
 
 function getBase64Image(img) {
     var canvas = document.createElement("canvas");
