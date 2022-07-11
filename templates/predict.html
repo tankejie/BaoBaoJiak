@@ -41,6 +41,7 @@
                     <div class="row">
                         <div class="col-md-auto"
                             style="text-align: left; color: black !important; justify-content: center; display: grid;">
+                            <!-- Display Image -->
                             <img id="output-image" class="img-thumbnail" src="">
                         </div>
                         <div class="col-9" style="color: black !important; text-align: left;">
@@ -52,7 +53,6 @@
                                 be
                                 {{ predictions.class1 }} with {{ predictions.prob1 }}% confidence.</h3>
                             <form method="post" enctype="multipart/form-data" class="services-link">
-                                <!--Display: Image Upload-->
                                 <button class="btn btn-primary btn-lg">
                                     <label for="input-image">Upload</label>
                                 </button>
@@ -103,6 +103,5 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="displayimagescript.js"></script>
-    <script>loadFile(event)</script>
 </body>
 </html>
