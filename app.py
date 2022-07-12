@@ -78,7 +78,7 @@ def prediction(filename):
     #Step 5
     return render_template('predict.html', predictions=predictions)
 
-@app.route('/prediction/<filename>')
+@app.route('/prediction/<filename>', methods=['GET', 'POST'])
 def predict_page():
     if request.method == 'POST':
         file = request.files['file']
