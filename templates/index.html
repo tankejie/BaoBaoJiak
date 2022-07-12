@@ -57,11 +57,11 @@
                                         localStorage.setItem("recent-image", reader.result);
                                     });
                                     reader.readAsDataURL(this.files[0]);
-                                    document.addEventListener("DOMContentLoaded", () => {
-                                        const recentImageDataURL = localStorage.getItem("recent-image");
-                                        if (recentImageDataURL) {
-                                            document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
-                                        }
+//                                     document.addEventListener("DOMContentLoaded", () => {
+//                                         const recentImageDataURL = localStorage.getItem("recent-image");
+//                                         if (recentImageDataURL) {
+//                                             document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
+//                                         }
                                     });
                                 });
                             </script>                                                                         
@@ -74,7 +74,7 @@
     </section>
     <!-- About Us -->
     <section>
-        <img id="imgPreview" src="">
+<!--         <img id="imgPreview" src=""> -->
     </section>
     <!-- <div id="maintext"
         style="position:absolute; margin:auto; width:700px; height:200px; text-align:center; top:0; bottom: 0; left: 0; right: 0;">
