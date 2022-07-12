@@ -79,11 +79,11 @@
                                                 localStorage.setItem("recent-image", reader.result);
                                             });
                                             reader.readAsDataURL(this.files[0]);
-//                                             document.addEventListener("DOMContentLoaded", () => {
-//                                                 const recentImageDataURL = localStorage.getItem("recent-image");
-//                                                 if (recentImageDataURL) {
-//                                                     document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
-//                                                 }
+                                             document.addEventListener("DOMContentLoaded", () => {
+                                                 const recentImageDataURL = localStorage.getItem("recent-image");
+                                                 if (recentImageDataURL) {
+                                                     document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
+                                                 }
                                             });
                                         });
                                     </script>
@@ -103,7 +103,7 @@
                             </div><br>
                             <div class="services-caption-subheading resultpage text-muted"
                                 style="font-style: normal; text-align: justify;">
-                                <p>description</p>
+                                {{ description }}
                             </div>
                         </div>
                     </div>
