@@ -20,9 +20,9 @@ global model
 model = load_model('durian_classification_trained_model.h5') 
 #global graph
 #graph = tf.compat.v1.get_default_graph()
-filename = ""
+# filename = ""
 
-@app.route('/prediction/' + filename + ".jpg", methods=['GET', 'POST'])
+@app.route('/prediction/' + filename, methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST']) 
 def main_page():
     if request.method == 'POST':
