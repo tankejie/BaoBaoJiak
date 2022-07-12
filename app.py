@@ -80,14 +80,14 @@ def prediction(filename):
     #Step 5
     return render_template('predict.html', predictions=predictions)
 
-@app.route('/prediction/' + filename, methods=['GET', 'POST'])
-def prediction_page():
-    if request.method == 'POST':
-        file = request.files['file']
-        filename = secure_filename(file.filename)
-        file.save(os.path.join('uploads', filename))
-        return redirect(url_for('prediction', filename=filename))
-    return render_template('index.html')
+# @app.route('/prediction/' + filename, methods=['GET', 'POST'])
+# def prediction_page():
+#     if request.method == 'POST':
+#         file = request.files['file']
+#         filename = secure_filename(file.filename)
+#         file.save(os.path.join('uploads', filename))
+#         return redirect(url_for('prediction', filename=filename))
+#     return render_template('index.html')
 
 # @app.route('/prediction/<filename>') 
 # def prediction(filename):
