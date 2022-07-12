@@ -69,7 +69,7 @@ else:
         "class3":number_to_class[index[0]],
         "prob1":percentages[index[2]],
         "prob2":percentages[index[1]],
-        "prob3":percentages[index[0]]
+        "prob3":percentages[index[0]],
         "description" = description
         }
     #Step 5
