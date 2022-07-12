@@ -30,7 +30,15 @@ def main_page():
         return redirect(url_for('prediction', filename=filename))
     return render_template('index.html')
 
-@app.route('/prediction/<filename>') 
+@app.route('/prediction/<filename>')
+def prediction_page():
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join('uploads', filename))
+        return redirect(url_for('prediction', filename=filename))
+    return render_template('predict.html')
+
 def prediction(filename):
     #Step 1
 #     img = plt.imread(os.path.join('uploads', filename))
