@@ -31,14 +31,6 @@ def main_page():
     return render_template('index.html')
 
 @app.route('/prediction/<filename>')
-def prediction_page():
-    if request.method == 'POST':
-        file = request.files['file']
-        filename = secure_filename(file.filename)
-        file.save(os.path.join('uploads', filename))
-        return redirect(url_for('prediction', filename=filename))
-    return render_template('predict.html')
-
 def prediction(filename):
     #Step 1
 #     img = plt.imread(os.path.join('uploads', filename))
@@ -84,7 +76,16 @@ def prediction(filename):
         "description":description
     }
     #Step 5
-    return render_template('predict.html', predictions=predictions)    
+    return render_template('predict.html', predictions=predictions)
+
+@app.route('/prediction/<filename>')
+def predict_page():
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join('uploads', filename))
+        return redirect(url_for('prediction', filename=filename))
+    return render_template('predict.html')
 
 # @app.route('/prediction/<filename>') 
 # def prediction(filename):
