@@ -85,7 +85,7 @@ def predict_page():
         filename = secure_filename(file.filename)
         file.save(os.path.join('uploads', filename))
         return redirect(url_for('prediction', filename=filename))
-    return render_template('predict.html')
+    return render_template('index.html')
 
 # @app.route('/prediction/<filename>') 
 # def prediction(filename):
