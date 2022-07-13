@@ -23,7 +23,8 @@ model = load_model('durian_classification_trained_model.h5')
 # filename = ""
 
 
-@app.route('/', methods=['GET', 'POST']) 
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def main_page():
     if request.method == 'POST':
         file = request.files['file']
