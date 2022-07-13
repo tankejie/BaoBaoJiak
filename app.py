@@ -63,7 +63,7 @@ def prediction(filename):
     elif number_to_class[index[2]] == "Sultan (D24)":
         description = "Before the Mao Shan Wang breed surged in popularity, the most famous breed back in the ’90s was the D24 durians. D24 durians are a little less overwhelming in flavour and are known for their creamy texture and subtle bittersweet after-taste. If you’re not that familiar with durians, this is a good introduction to the king of fruits. The stem of the durian is shorter compared to other durians and it has a brown-coloured ring around the bottom of the stem."
     elif number_to_class[index[2]] == "Singapore Red Prawn (D13)":
-        description = "Originating from Johor, D13 durians are also known as the 'kampung' breed with a sticky texture. It is perhaps one of the many highly-sought-after durian species with a bright orange flesh and large seeds which makes it easier to enjoy."
+        description = "Originating from Johor, D13 durians are also known as the 'kampung' breed with a sticky texture. It is perhaps one of the many highly-sought-after durian species with a bright orange flesh and large seeds which makes it easier to enjoy.<br><strong>Flavour profile:</strong> Sweet and fragrant with bright orange sticky flesh<br><strong>Great for:</strong> Beginners who wish to enjoy the durian without the usual strong pungent flavours"
     else:
         description = "To be added"
     predictions = {
