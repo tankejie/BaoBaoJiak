@@ -53,7 +53,7 @@
                         <div class="box"
                             style="width: 200px; height: 200px; object-fit: cover; overflow: hidden; border: 5px solid black;">
                             <!-- Display Image -->
-                            <img id="imgPreview" class="img-mobile-result" src="" style="min-width: 100%; min-height: 100%; object-fit: cover; overflow: hidden;">
+                            <img id="imgPreview" class="img-mobile-result" src="" style="max-width: 100%; max-height: 100%; object-fit: cover; overflow: hidden;">
                             <script>
                                 const recentImageDataURL = localStorage.getItem("recent-image");
                                 document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
