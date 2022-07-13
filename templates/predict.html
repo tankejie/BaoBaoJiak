@@ -60,13 +60,13 @@
                             </script>
                         </div>
                         <div class="col-9" style="color: black !important; text-align: left;">
-                            <h2 class="section-heading resultpage text-uppercase" style="color: black !important;">{{
-                                predictions.class1 }}
+                            <h2 class="section-heading resultpage text-uppercase" style="color: black !important;">{% autoescape off %}{{
+                                predictions.class1 }{% endautoescape %} Durian}
                             </h2>
                             <h3 class="section-subheading resultpage text-muted"
-                                style="color: black !important; font-style: normal !important;">We think the durian may
+                                style="color: black !important; font-style: normal !important;">We identify the durian may
                                 be
-                                {{ predictions.class1 }} with {{ predictions.prob1 }}% confidence.</h3>
+                                {% autoescape off %}{{ predictions.class1 }}{% endautoescape %} durian with {% autoescape off %}{{ predictions.prob1 }}{% endautoescape %}% confidence.</h3>
                             <form action="/predict" method="post" enctype="multipart/form-data" class="services-link">
                                 <button class="btn btn-primary btn-lg">
                                     <label for="input-image">Upload</label>
@@ -99,7 +99,7 @@
                         <div class="row">
                             <!--Portfolio item 1-->
                             <div class="services-caption-heading resultpage" style="color: black;">
-                                <h2>About {{ predictions.class1 }} Durian</h2>
+                                <h2>About</h2>
                             </div><br>
                             <div class="services-caption-subheading resultpage text-muted"
                                 style="font-style: normal; text-align: justify;">
