@@ -110,6 +110,19 @@
         <!-- About Us -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-            </script>
+        </script>
+        <script>
+            window.watsonAssistantChatOptions = {
+                integrationID: "1774ef45-3ec5-46e5-9f9d-92960c8af812", // The ID of this integration.
+                region: "us-south", // The region your integration is hosted in.
+                serviceInstanceID: "40a11d1b-c890-4ccd-960b-8b41485151bf", // The ID of your service instance.
+                onLoad: function (instance) { instance.render(); }
+            };
+            setTimeout(function () {
+                const t = document.createElement('script');
+                t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+                document.head.appendChild(t);
+            });
+        </script>
     </body>
     </html>
