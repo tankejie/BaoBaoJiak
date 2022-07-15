@@ -36,6 +36,17 @@
             </div>
         </div>
     </nav>
+    <script>
+        $(document).ready(function () {
+            $(document).click(function (event) {
+                var clickover = $(event.target);
+                var _opened = $(".navbar-collapse").hasClass("navbar-collapse in");
+                if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+                    $("button.navbar-toggle").click();
+                }
+            });
+        })
+    </script>
     <!-- Showcase -->
     <section class="bg-dark text-light p-5 text-center text-sm-start" id="classification">
         <div class="container">
