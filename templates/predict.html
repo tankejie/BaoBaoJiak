@@ -13,23 +13,23 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3 fixed-top">
             <div class="container">
-                <a href="https://baobaojiak.herokuapp.com/" class="navbar-brand">BAO BAO JIAK!</a>
+                <a href="index.html" class="navbar-brand">BAO BAO JIAK!</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="https://baobaojiak.herokuapp.com/#classification" class="nav-link">Know Your Durian King</a>
+                            <a href="index.html/#classification" class="nav-link">Know Your Durian King</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://baobaojiak.herokuapp.com/#about" class="nav-link">About</a>
+                            <a href=index.html/"#about" class="nav-link">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://baobaojiak.herokuapp.com/#team" class="nav-link">Our Awesome Team</a>
+                            <a href="index.html/#team" class="nav-link">Our Team</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://baobaojiak.herokuapp.com/#contact" class="nav-link">Contact Us</a>
+                            <a href="index.html/#contact" class="nav-link">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -37,12 +37,12 @@
         </nav>
         <!-- Showcase -->
         <header class="masthead" style="padding-top: 6em; padding-bottom: 6em;">
-            <section class="text-center text-sm-start" id="services" style="padding: 10px;">
+            <section class="page-section" id="services" style="padding: 10px;">
                 <div class="container">
-                    <div class="text-center"
+                    <div class="text-center text-sm-start"
                         style="border-radius: 20px 20px 20px 20px; background-color: white; padding: 20px;">
-                        <div class="row text-center text-sm-start">
-                            <div class="box text-center text-sm-start" style="width: 200px; height: 200px; border: 5px solid black;">
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="box" style="width: 200px; height: 200px; border: 5px solid black;">
                                 <!-- Display Image -->
                                 <img id="imgPreview" class="img-mobile-result" src=""
                                     style="width:100%; height:100%; object-fit: cover;">
@@ -51,17 +51,17 @@
                                     document.querySelector("#imgPreview").setAttribute("src", recentImageDataURL);
                                 </script>
                             </div>
-                            <div class="col-9 text-center text-sm-start" style="color: black !important; text-align: left;">
-                                <h2 class="section-heading resultpage text-uppercase" style="color: black !important;">
+                            <div class="col-9" style="color: black !important; text-align: left;">
+                                <h2 class="text-center text-sm-start text-uppercase" style="color: black !important;">
                                     {{ predictions.class1 }} Durian
                                 </h2>
-                                <h3 class="section-subheading resultpage text-muted"
+                                <h3 class="text-center text-sm-start text-muted"
                                     style="color: black !important; font-style: normal !important;">
                                     We identify this durian to be {{ predictions.class1 }} durian with {{
                                     predictions.prob1 }}% confidence.
                                 </h3>
                                 <form action="/predict" method="post" enctype="multipart/form-data"
-                                    class="services-link">
+                                    class="text-center text-sm-start">
                                     <button class="btn btn-primary btn-lg">
                                         <label for="input-image">Upload</label>
                                     </button>
@@ -110,19 +110,6 @@
         <!-- About Us -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-        </script>
-        <script>
-            window.watsonAssistantChatOptions = {
-                integrationID: "1774ef45-3ec5-46e5-9f9d-92960c8af812", // The ID of this integration.
-                region: "us-south", // The region your integration is hosted in.
-                serviceInstanceID: "40a11d1b-c890-4ccd-960b-8b41485151bf", // The ID of your service instance.
-                onLoad: function (instance) { instance.render(); }
-            };
-            setTimeout(function () {
-                const t = document.createElement('script');
-                t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
-                document.head.appendChild(t);
-            });
-        </script>
+            </script>
     </body>
     </html>
