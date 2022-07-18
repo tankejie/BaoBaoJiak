@@ -52,16 +52,16 @@
                                 </script>
                             </div>
                             <div class="col-9" style="color: black !important; text-align: left;">
-                                <h2 class="text-center text-sm-start text-uppercase" style="color: black !important;">
+                                <h2 class="text-center text-lg-start text-uppercase" style="color: black !important;">
                                     {{ predictions.class1 }} Durian
                                 </h2>
-                                <h3 class="text-center text-sm-start text-muted"
+                                <h3 class="text-center text-lg-start text-muted"
                                     style="color: black !important; font-style: normal !important;">
                                     We identify this durian to be {{ predictions.class1 }} with {{
                                     predictions.prob1 }}% confidence.
                                 </h3>
                                 <form action="/predict" method="post" enctype="multipart/form-data"
-                                    class="text-center text-sm-start">
+                                    class="text-center text-lg-start">
                                     <button class="btn btn-primary btn-lg">
                                         <label for="input-image">Upload</label>
                                     </button>
@@ -94,10 +94,10 @@
                             style="border-radius: 20px 20px 20px 20px; background-color: white; padding: 20px;">
                             <div class="row">
                                 <!--Portfolio item 1-->
-                                <div class="services-caption-heading resultpage" style="color: black;">
+                                <div class="text-center text-lg-start services-caption-heading resultpage" style="color: black;">
                                     <h2>About</h2>
                                 </div><br>
-                                <div class="services-caption-subheading resultpage text-muted"
+                                <div class="services-caption-subheading resultpage text-center text-lg-start text-muted"
                                     style="font-style: normal; text-align: justify;">
                                     <h3>{% autoescape off %}{{ predictions.description }}{% endautoescape %}</h3>
                                 </div>
